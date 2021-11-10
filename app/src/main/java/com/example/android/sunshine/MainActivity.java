@@ -36,6 +36,11 @@ import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.data.WeatherContract;
 import com.example.android.sunshine.sync.SunshineSyncUtils;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor>,
         ForecastAdapter.ForecastAdapterOnClickHandler {
@@ -183,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * Called by the {@link android.support.v4.app.LoaderManagerImpl} when a new Loader needs to be
+     * Called by the {@link android.support.v4.app} when a new Loader needs to be
      * created. This Activity only uses one loader, so we don't necessarily NEED to check the
      * loaderId, but this is certainly best practice.
      *
@@ -280,8 +285,8 @@ public class MainActivity extends AppCompatActivity implements
      */
     private void showWeatherDataView() {
         /* First, hide the loading indicator */
-        mLoadingIndicator.setVisibility(View.INVISIBLE);
-        /* Finally, make sure the weather data is visible */
+//        mLoadingIndicator.setVisibility(View.INVISIBLE);
+        /* Finally, make sure the weather data is visible   */
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 
